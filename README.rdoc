@@ -1,0 +1,20 @@
+== underneath
+
+underneath é uma aplicação de gerenciamento de projeto/repositório
+
+== detalhes do aplicativo
+
+rails 3.1
+funciona apenas com gitosis
+sqlite como banco de dados padrão
+
+== iniciando
+
+1. no prompt de comando, clone a aplicação:
+2. configure o gitosis https://help.ubuntu.com/community/Git mas use "git" como nome de usuário gitosis
+3. altere o diretório para <tt>app</tt> e rode os próximos comandos:
+        ruby configure.rb # ou ruby configure.rb production | test | development
+4. cheque o arquivo config/gitosis.yml
+5. inicie a aplicação rails:
+        rails s
+6. vá para http://localhost:3000/ e você verá a página de gerenciamento de projeto
