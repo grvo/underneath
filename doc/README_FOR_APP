@@ -1,0 +1,2 @@
+use esse arquivo readme para introduzir sua aplicação e direcionar para locais úteis na api para aprender mais.
+rodar "rake doc:app" para gerar documentação de api para seus modelos, controladores, helpers e bibliotecas.
