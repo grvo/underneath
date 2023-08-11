@@ -1,0 +1,32 @@
+# sqlite versão 3.x
+#   gem install sqlite3
+#
+# certificar-se de que a gema do sqlite 3 esteja definida na gemfile
+# gem 'sqlite3'
+
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+
+  pool: 5
+  timeout: 5000
+
+# aviso: a database definida como "test" será apagada e
+# re-generada do seu banco de dados de desenvolvimento quando
+# "rake" for executado.
+#
+# não setar esse db como o mesmo de desenvolvimento ou produção.
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: sqlite3
+  database: db/production.sqlite3
+
+  pool: 5
+  timeout: 5000
