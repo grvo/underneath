@@ -1,0 +1,8 @@
+/**
+ * isso é um arquivo manifest que automaticamente irá incluir todas as estilizações disponíveis nesse diretório
+ * e qualquer sub-diretório. sinta-se livre para adicionar estilos para o aplicativo nesse arquivo para aparecerem
+ * no topo do arquivo compilado, porém é recomendado criar um novo arquivo para isso.
+ *
+ *= require_self
+ *= require_tree .
+ */
