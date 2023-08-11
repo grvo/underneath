@@ -2,3 +2,593 @@
 //
 // eles irão automaticamente ser incluídos em application.css
 // você pode utilizar sass (scss) aqui: https://sass-lang.com/
+
+@mixin round-borders-bottom($radius) {
+    border-top: 1px solid #eaeaea;
+
+    -moz-border-radius-bottomright: $radius;
+    -moz-border-radius-bottomleft: $radius;
+
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+
+    -webkit-border-bottom-left-radius: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+}
+
+@mixin round-borders-top($radius) {
+    border-top: 1px solid #eaeaea;
+
+    -moz-border-radius-topright: $radius;
+    -moz-border-radius-topleft: $radius;
+
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+
+    -webkit-border-top-left-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+}
+
+@mixin round-borders-all($radius) {
+    border: 1px solid #eaeaea;
+
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin hover-color {
+    background: #fff !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff6bf)) !important;
+    background: -moz-linear-gradient(top, #fff, #fff6bf) !important;
+    background: transparent 9 !important;
+}
+
+.diff_file {
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+
+    .diff_file_header {
+        padding: 5px 5px;
+
+        border-bottom: 1px solid #ccc;
+        background: #eee;
+    }
+
+    .diff_file_content {
+        overflow-x: scroll;
+
+        background: #fff;
+        color: #333;
+
+        font-size: 13px;
+        font-family: 'Courier New', 'andale mono', 'lucida console', monospace;
+    }
+
+    .diff_file_content_image {
+        background: #eee;
+
+        text-align: center;
+
+        img {
+            padding: 100px;
+            max-width: 300px;
+        }
+    }
+}
+
+#logo {
+    &:hover {
+        background: none;
+    }
+}
+
+.file_stats {
+    margin-bottom: 10px;
+
+    @include round-borders-all(4px);
+
+    span {
+        border-top: 1px solid #eaeaea;
+        padding: 5px 5px;
+        display: block;
+
+        &:first-child {
+            border-top: none;
+        }
+
+        img {
+            width: 18px;
+            float: left;
+            margin-right: 6px;
+        }
+    }
+}
+
+.round_borders {
+    @include round-borders-all(4px);
+
+    padding: 4px 0px;
+}
+
+table.round_borders {
+    float: left;
+}
+
+.day-commits-table {
+    @include round-borders-all(4px);
+    padding: 4px 0px;
+
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    background: #e6f1f6;
+
+    .day-header {
+        padding: 10px;
+
+        h3 {
+            margin: 0px;
+        }
+    }
+
+    ul {
+        display: block;
+        list-style: none;
+
+        margin: 0px;
+        padding: 0px;
+
+        li.commit {
+            display: list-item;
+
+            padding: 8px;
+            margin: 0px;
+
+            background: #f7fbfc;
+            border-top: 1px solid #e2eaee;
+
+            &:first-child {
+                border-top: 1px solid #e2eaee;
+            }
+
+            &:nth-child(2n+1) {
+                background: white;
+            }
+
+            a.button {
+                width: 85px;
+                padding: 10px;
+                margin: 0px;
+
+                float: right;
+            }
+
+            p {
+                margin-bottom: 3px;
+
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@mixin panel-color {
+    background: #111 !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#111)) !important;
+    background: -moz-linear-gradient(top, #333, #111) !important;
+    background: transparent 9 !important;
+}
+
+#header-panel {
+    @include panel-color;
+
+    height: 40px;
+    width: 100%;
+
+    position: fixed;
+    top: 0px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    z-index: 999;
+
+    .button {
+        color: #bbb;
+        border: none;
+        margin: 0px;
+        height: 25px;
+        background: transparent;
+        padding: 10px 20px 5px 20px;
+
+        &:hover {
+            color: white;
+        }
+
+        &.current {
+            border-bottom: 3px solid #eaeaea !important;
+            padding: 10px 20px 0;
+
+            color: #eaeaea;
+        }
+    }
+
+    .search-holder {
+        float: left;
+        width: 290px;
+
+        input {
+            @include round-borders-all(4px);
+
+            width: 290px;
+            padding: 5px;
+
+            border-color: #888;
+            background: #666;
+            color: #222;
+
+            &:focus {
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+}
+
+#content-container {
+    min-height: 250px;
+    padding: 20px;
+
+    @include round-borders-bottom(8px);
+
+    background: #fff;
+    border: 2px solid #eaeaea;
+    border-top: none;
+}
+
+body {
+    background: #eaeaea;
+}
+
+a {
+    color: #111;
+}
+
+.diff_file_content {
+    .old_line, .new_line {
+        background: #ececec;
+        color: #777;
+
+        width: 15px;
+        padding: 0px 10px;
+        border-right: 1px solid #ccc;
+        float: left;
+    }
+}
+
+.view_file_content {
+    .old_line, .new_line {
+        background: #ececec;
+        color: #777;
+
+        width: 15px;
+        padding: 0px 10px;
+        border-right: 1px solid #ccc;
+        float: left;
+    }
+
+    .old_line {
+        display: none;
+    }
+}
+
+.view_file {
+    border: 1px solid #ccc;
+
+    margin-bottom: 1em;
+
+    .view_file_header {
+        padding: 5px 5px;
+
+        border-bottom: 1px solid #ccc;
+        background: #eee;
+    }
+
+    .view_file_content {
+        background: #fff;
+        color: #514721;
+
+        font-size: 11px;
+    }
+
+    .view_file_content_image {
+        background: #eee;
+
+        text-align: center;
+
+        img {
+            padding: 100px;
+            max-width: 300px;
+        }
+    }
+}
+
+.back_small.button {}
+
+input.ssh_project_url {
+    padding: 5px;
+    margin: 0px;
+    
+    float: right;
+    width: 400px;
+    text-align: center;
+}
+
+.day-commits-table li.commit {
+    cursor: pointer;
+
+    &:hover {
+        @include hover-color;
+    }
+}
+
+/*
+#fff6bf
+#ffd324
+*/
+#tree-slider tr.tree-item {
+    cursor: pointer;
+
+    &:hover {
+        @include hover-color;
+
+        td {
+            @include hover-color;
+        }
+    }
+}
+
+#projects-list .project {
+    height: 50px;
+}
+
+#projects-list .project,
+#issues-table .issue {
+    cursor: pointer;
+
+    &:hover {
+        @include hover-color;
+
+        td {
+            @include hover-color;
+        }
+    }
+}
+
+.clear {
+    clear: both;
+}
+
+.top_project_menu {
+    a {
+        border-right: 1px solid #ffffff;
+        box-shadow: -1px 0 #dddddd inset;
+        text-shadow: 0 1px 0 #ffffff;
+
+        color: #666;
+        
+        display: block;
+        font-size: 16px;
+        text-decoration: none;
+        line-height: 20px;
+        padding: 11px 26px 12px 24px;
+        float: left;
+
+        &.current {
+            background-color: #ffffff;
+            color: #222222;
+        }
+    }
+}
+
+.top_bar {
+    margin-top: 50px;
+    height: 43px;
+    overflow: hidden;
+    width: 990px;
+
+    @include round-borders-top(8px);
+    
+    background-color: #f4f4f4;
+    box-shadow: 0 1px #ffffff inset, 0 -1px #dddddd inset;
+}
+
+/** inputs de form **/
+.user_new,
+.edit_user,
+.new_project,
+.edit_project {
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+
+    textarea {
+        width: 400px;
+        padding: 8px;
+        font-size: 14px;
+
+        @include round-borders-all(4px);
+    }
+}
+
+.input_button {
+    // @include round-borders-all(4px);
+
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+
+    border-color: #eeeeee #dedede #dedede #eeeeee;
+    border-right: 1px solid #dedede;
+    border-style: solid;
+    border-width: 1px;
+}
+
+tbody tr:nth-child(2n) td,
+tbody tr.even td {
+    background: none repeat scroll 0 0 #f7fbfc;
+
+    border-top: 1px solid #e2eaee;
+    border-bottom: 1px solid #e2eaee;
+}
+
+.top_menu_count {
+    background: none repeat scroll 0 0 #fff6bf;
+    color: #514721;
+
+    border: 1px solid #dddddd;
+    border-color: #ffd324;
+    border-top: none;
+
+    padding: 2px;
+    font-size: 12px;
+    position: relative;
+
+    top: -14px;
+    left: 10px;
+}
+
+#logo {
+    color: #eaeaea;
+    padding: 4px;
+
+    font-family: monospace;
+    font-size: 26px;
+
+    text-decoration: none;
+    text-shadow: #555 1px 1px;
+}
+
+/** flash **/
+#flash_container {
+    height: 40px;
+    width: 100%;
+    top: 0px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: white;
+    cursor: pointer;
+    border-bottom: 1px solid #777;
+    position: fixed;
+    z-index: 1009;
+
+    h4 {
+        color: #444;
+
+        font-size: 22px;
+        padding-top: 5px;
+    }
+}
+
+/** botões **/
+
+.lbutton,
+.lite_button {
+    display: block;
+    float: left;
+    line-height: 130%;
+    text-decoration: none;
+    cursor: pointer;
+
+    background: white;
+    border: 1px solid #d3d3d3;
+    color: #565656;
+
+    margin: 0px 5px;
+    padding: 5px 10px;
+
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+
+    &:hover {
+        border: 1px solid #c2e1ef;
+        color: #0099ff;
+    }
+
+    &.hm {
+        margin: 0px 0px;
+    }
+
+    &.vm {
+        margin: 5px 0px;
+    }
+}
+
+/** notas **/
+#notes-list {
+    display: block;
+    list-style: none;
+
+    margin: 0px;
+    padding: 0px;
+
+    li {
+        display: list-item;
+        background: #f7fbfc;
+        border-top: 1px solid #e2eaee;
+
+        padding: 8px;
+        margin: 0px;
+
+        &:first-child {
+            border-top: none;
+        }
+
+        &:nth-child(2n+1) {
+            background: white;
+        }
+
+        p {
+            margin-bottom: 3px;
+
+            font-size: 12px;
+        }
+    }
+}
+
+.notes_count { 
+    background: none repeat scroll 0 0 #FFF6BF;
+    border-color: #FFD324;
+    color: #514721;
+    border: 2px solid #DDDDDD;
+
+    margin-bottom: 1em;
+    margin-top: 3px;
+
+    padding: 2px 5px;
+    position: relative;
+    
+    right: 6px;
+    top: 6px;
+}
+
+.note_author { 
+    float: left;
+
+    width: 60px;
+}
+
+.note_content { 
+    float: left;
+
+    width: 750px;
+}
+  
+.issue_notes { 
+    .note_content { 
+        float: left;
+
+        width: 400px;
+    }
+}
