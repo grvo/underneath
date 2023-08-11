@@ -1,0 +1,15 @@
+v0.9.1
+	- aumento de testes coverage
+	- melhorias de design
+	- nova notificação de email para issues
+	- nome de app atualizado
+	- re-design para issues
+	- issues podem ser editados
+
+v0.8.0
+	- destaque de sintaxe para tipos de arquivos principais
+	- re-design
+	- estabilidade
+	- correções de segurança
+	- aumento de testes coverage
+	- notificação de email
